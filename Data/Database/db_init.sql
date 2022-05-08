@@ -12,6 +12,11 @@ CREATE TABLE IF NOT EXISTS estudiante (
   PRIMARY KEY (id_estudiante)
 );
 
+-- Insertar datos de prueba
+INSERT INTO estudiante (nombres, apellidos, email, password) VALUES ('Juan', 'Perez', 'perez@gmail.com', '123456');
+INSERT INTO estudiante (nombres, apellidos, email, password) VALUES ('Pedro', 'Romero', 'romero@gmail.com', '123456');
+INSERT INTO estudiante (nombres, apellidos, email, password) VALUES ('Fernando', 'Herrera', 'herrera@gmail.com', '123456');
+
 -- Procedimiento para obtener todos los estudiantes
 DELIMITER //
 CREATE PROCEDURE sp_obtener_estudiantes()

@@ -24,4 +24,7 @@ C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.vbproj.C
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.exe
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.xml
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.pdb
-C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.Form1.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\XanderUI.dll
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.StudentAdminView.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.StudentForm.resources

@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,54 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAN1JREFUSEvt
+        lrEOgjAQhnkIjT6CuhojVDAMvo7xAR0cxZb4HhqkRjcZlNNjIBxo4EyXfsk39e7+pl3OsRjlfgz6Wvlh
+        otxVF2HGLQ57OLYZLb1NKkWW+2TyoQ9ijeNpznI2zAs5QwuzUzQfYEwVLcWSaGIRZmNMFfgTqolDmI0x
+        VWwwpza4hA3m1AaXaAxWIk2lt9NysaWEs08N0ZvbOjjZu2Msq+USBROqF2wfHHsjLKsFLkf1gq2D38+o
+        RPxF/qfuanOwqUXA2OoDGFn2CmC9vUb+lMOf11vLf3CcFxdfBWyOI+xTAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAdZJREFUSEvt
+        ljtPwlAUgEk0/hjRSVrUMICtGhODiUrCQow4mKAxYqLgII4uEo3yp5h1AgR88fKxwKUw0GPvpRRKbxq4
+        xbBwkm+55/H13HS4tkmMNcBnn6muOeZqIidaAc/As9Sx5oEEjqsJfF4BRkQOrfIOdTw9wO2eVgqzfY2W
+        qQr8C/h8U6rGGOR6KY2joOrh7KrGGFVx0U1rGgV4tqoxhpkY+b3Ucx3rLvq5ApO4cXUOUP6GZuLekOvQ
+        uI6CnM5AfW+Xmh9evOECOZUB+PolNOM3+ryCFDkBKJZJvvX0rGy+bKhh2rge2CHbaPLEnZZrxCLkNkju
+        swRS+FDX24FJjKHJG7GLgaQYZjGmXw6Vn4GkGEtiDJHn37ryUgWk4wNqbS+WxdJlmMg0sULzMU6t7cWS
+        mEiLban8UQQ599qVP5jLmcVS9LQrfS+Q660HtvU/nImcSWyQHgW1nFF+q+vtMLQYeVe6P1OhDNJZSJfH
+        1IN+kLO59odl84C2BEMN28ahfbJV76b94M1byST562l5JjEGbbqp5zrERfq5ArPYKubicT0E8NMHCXyG
+        1miRlOnTB0dNXJofpRyJfBrfpDrePMjzVnDOIo9zwQp4xsDP20n8T9hsf8nwdmNaUE2tAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <metadata name="FormRadius.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>32</value>
+  </metadata>
+  <metadata name="DragTopPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
+  <metadata name="TableRadius.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>270, 17</value>
+  </metadata>
+  <metadata name="BtnAddRadius.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>394, 17</value>
+  </metadata>
+  <metadata name="BtnUpdateRadius.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>518, 17</value>
+  </metadata>
+  <metadata name="BtnDeleteRadius.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>657, 16</value>
+  </metadata>
 </root>

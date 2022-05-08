@@ -11,9 +11,10 @@
     <AssemblyName>Fase4_Prototipo</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>D:\Paquetes Visual Studio Forms\Bunifu IU\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
@@ -62,6 +66,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="XanderUI">
+      <HintPath>D:\Paquetes Visual Studio Forms\Xander IU\XanderUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -77,13 +84,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Config\Database.vb" />
-    <Compile Include="Data\Controllers\EstudianteController.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Components\StudentForm.Designer.vb">
+      <DependentUpon>StudentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StudentForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Data\Config\Database.vb" />
+    <Compile Include="Data\Controllers\EstudianteController.vb" />
+    <Compile Include="StudentAdminView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentAdminView.Designer.vb">
+      <DependentUpon>StudentAdminView.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Data\Models\EstudianteModel.vb" />
@@ -91,6 +104,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -104,8 +118,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Components\StudentForm.resx">
+      <DependentUpon>StudentForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentAdminView.resx">
+      <DependentUpon>StudentAdminView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -125,6 +142,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

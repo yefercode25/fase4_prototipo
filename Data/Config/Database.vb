@@ -2,7 +2,7 @@
 Public Class Database
     Private Shared connString As String = "Server=localhost; Database=db_visual_basic; Uid=root; Pwd=root;"
 
-    Public Sub TestConection()
+    Public Shared Sub TestConection()
         Dim conn As MySqlConnection = New MySqlConnection(connString)
         Try
             conn.Open()
@@ -14,6 +14,18 @@ Public Class Database
     End Sub
 
     Public Shared Function GetConnection() As MySqlConnection
-        Return New MySqlConnection(connString)
+        Dim conn As MySqlConnection = New MySqlConnection(connString)
+        Try
+            conn.Open()
+            Console.WriteLine("Conexión establecida con la base de datos")
+            conn.Close()
+
+            Return conn
+        Catch ex As Exception
+            MessageBox.Show("Error al conectar a la base de datos, verifica la cadena de conexión y que la base de datos exista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Environment.Exit(1)
+        End Try
+
+        Return Nothing
     End Function
 End Class
