@@ -28,3 +28,7 @@ C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\XanderUI.dll
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.StudentAdminView.resources
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.StudentForm.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.RealidadAumentadaView.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.ApplicationsControl.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.CreateControl.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.WhoCreateControl.resources

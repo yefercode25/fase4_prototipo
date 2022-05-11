@@ -90,8 +90,32 @@
     <Compile Include="Components\StudentForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Components\UserControls\ApplicationsControl.Designer.vb">
+      <DependentUpon>ApplicationsControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\ApplicationsControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UserControls\MeaningControl.Designer.vb">
+      <DependentUpon>MeaningControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\MeaningControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UserControls\WhoCreateControl.Designer.vb">
+      <DependentUpon>WhoCreateControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\WhoCreateControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Data\Config\Database.vb" />
     <Compile Include="Data\Controllers\EstudianteController.vb" />
+    <Compile Include="RealidadAumentadaView.Designer.vb">
+      <DependentUpon>RealidadAumentadaView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RealidadAumentadaView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentAdminView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +144,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Components\StudentForm.resx">
       <DependentUpon>StudentForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UserControls\ApplicationsControl.resx">
+      <DependentUpon>ApplicationsControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UserControls\MeaningControl.resx">
+      <DependentUpon>MeaningControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UserControls\WhoCreateControl.resx">
+      <DependentUpon>WhoCreateControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RealidadAumentadaView.resx">
+      <DependentUpon>RealidadAumentadaView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentAdminView.resx">
       <DependentUpon>StudentAdminView.vb</DependentUpon>

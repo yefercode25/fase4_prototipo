@@ -22,5 +22,10 @@ Fase4_Prototipo
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
 </member>
+<member name="P:Fase4_Prototipo.My.Resources.Resources.String1">
+<summary>
+  Busca una cadena traducida similar a .
+</summary>
+</member>
 </members>
 </doc>
