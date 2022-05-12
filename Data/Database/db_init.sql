@@ -70,3 +70,12 @@ BEGIN
   WHERE id_estudiante = id_estudiante_del;
 END //
 DELIMITER ;
+
+-- Procedimiento para loguear un estudiante por email y password
+DELIMITER //
+CREATE PROCEDURE sp_login_estudiante(IN email_get VARCHAR(80), IN password_get VARCHAR(255))
+BEGIN
+  SELECT * FROM estudiante
+  WHERE email = email_get AND password = password_get;
+END //
+DELIMITER ;

@@ -11,7 +11,9 @@
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Me.Close()
+        Me.Hide()
+        Me.Dispose()
+        InitMenuView.Show()
     End Sub
 
     Private Sub BtnMinimize_Click(sender As Object, e As EventArgs) Handles BtnMinimize.Click

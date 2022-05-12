@@ -96,6 +96,12 @@
     <Compile Include="Components\UserControls\ApplicationsControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Components\UserControls\CovidInfluenceControl.Designer.vb">
+      <DependentUpon>CovidInfluenceControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\CovidInfluenceControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Components\UserControls\MeaningControl.Designer.vb">
       <DependentUpon>MeaningControl.vb</DependentUpon>
     </Compile>
@@ -110,6 +116,18 @@
     </Compile>
     <Compile Include="Data\Config\Database.vb" />
     <Compile Include="Data\Controllers\EstudianteController.vb" />
+    <Compile Include="InitMenuView.Designer.vb">
+      <DependentUpon>InitMenuView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InitMenuView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginView.Designer.vb">
+      <DependentUpon>LoginView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RealidadAumentadaView.Designer.vb">
       <DependentUpon>RealidadAumentadaView.vb</DependentUpon>
     </Compile>
@@ -148,11 +166,20 @@
     <EmbeddedResource Include="Components\UserControls\ApplicationsControl.resx">
       <DependentUpon>ApplicationsControl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\UserControls\CovidInfluenceControl.resx">
+      <DependentUpon>CovidInfluenceControl.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\UserControls\MeaningControl.resx">
       <DependentUpon>MeaningControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\UserControls\WhoCreateControl.resx">
       <DependentUpon>WhoCreateControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitMenuView.resx">
+      <DependentUpon>InitMenuView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginView.resx">
+      <DependentUpon>LoginView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RealidadAumentadaView.resx">
       <DependentUpon>RealidadAumentadaView.vb</DependentUpon>

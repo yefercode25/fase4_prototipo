@@ -181,4 +181,32 @@ Public Class EstudianteController
 
         Return False
     End Function
+
+    Public Shared Function LoginStudent(ByVal std As EstudianteModel) As Boolean
+        Try
+            conn.Open()
+
+            cmd = New MySqlCommand("sp_login_estudiante", conn) With {
+                .CommandType = CommandType.StoredProcedure
+            }
+
+            cmd.Parameters.Add("email_get", MySqlDbType.String).Value = std.Email
+            cmd.Parameters.Add("password_get", MySqlDbType.String).Value = std.Password
+
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+            If reader.Read() Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MessageBox.Show("No se pudo iniciar sesión", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return False
+        Finally
+            conn.Close()
+        End Try
+
+        Return False
+    End Function
 End Class
