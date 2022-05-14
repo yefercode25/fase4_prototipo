@@ -37,6 +37,7 @@ Partial Class LoginView
         Me.BtnLoginActionRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.LblCreateUser = New System.Windows.Forms.Label()
         Me.DragForm = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.LblNotCredentials = New System.Windows.Forms.Label()
         Me.PnlTop.SuspendLayout()
         CType(Me.BtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,12 +189,25 @@ Partial Class LoginView
         Me.DragForm.TargetControl = Me.PnlTop
         Me.DragForm.Vertical = True
         '
+        'LblNotCredentials
+        '
+        Me.LblNotCredentials.AutoSize = True
+        Me.LblNotCredentials.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LblNotCredentials.Font = New System.Drawing.Font("Century Gothic", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblNotCredentials.ForeColor = System.Drawing.Color.DodgerBlue
+        Me.LblNotCredentials.Location = New System.Drawing.Point(59, 375)
+        Me.LblNotCredentials.Name = "LblNotCredentials"
+        Me.LblNotCredentials.Size = New System.Drawing.Size(161, 16)
+        Me.LblNotCredentials.TabIndex = 9
+        Me.LblNotCredentials.Text = "Acceder como invitado"
+        '
         'LoginView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(295, 365)
+        Me.ClientSize = New System.Drawing.Size(295, 413)
+        Me.Controls.Add(Me.LblNotCredentials)
         Me.Controls.Add(Me.LblCreateUser)
         Me.Controls.Add(Me.BtnLoginAction)
         Me.Controls.Add(Me.TxtPass)
@@ -229,4 +243,5 @@ Partial Class LoginView
     Friend WithEvents BtnLoginActionRadius As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents LblCreateUser As Label
     Friend WithEvents DragForm As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents LblNotCredentials As Label
 End Class

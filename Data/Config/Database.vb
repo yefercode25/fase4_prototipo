@@ -23,7 +23,7 @@ Public Class Database
             Return conn
         Catch ex As Exception
             MessageBox.Show("Error al conectar a la base de datos, verifica la cadena de conexión y que la base de datos exista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Environment.Exit(1)
+            MessageBox.Show("Algunas funciones se verán limitadas sin una conexión a la base de datos, revisa la configuración en el proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
         Return Nothing

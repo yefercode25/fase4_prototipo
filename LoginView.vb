@@ -41,4 +41,10 @@
 
         Return True
     End Function
+
+    Private Sub LblNotCredentials_Click(sender As Object, e As EventArgs) Handles LblNotCredentials.Click
+        Me.Hide()
+        Me.Dispose()
+        RealidadAumentadaView.Show()
+    End Sub
 End Class

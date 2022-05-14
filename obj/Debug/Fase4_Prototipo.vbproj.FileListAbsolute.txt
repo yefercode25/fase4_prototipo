@@ -35,3 +35,4 @@ C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.WhoCreat
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.CovidInfluenceControl.resources
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.InitMenuView.resources
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.LoginView.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.ExamView.resources

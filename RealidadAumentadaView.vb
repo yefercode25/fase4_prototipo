@@ -4,8 +4,14 @@
     Dim meaningControl As New CreateControl()
     Dim applicationsControl As New ApplicationsControl()
 
+    Dim isValidViewMeaning As Boolean = False
+    Dim isValidViewApplications As Boolean = False
+    Dim isValidViewWhoCreate As Boolean = False
+    Dim isValidViewCovid As Boolean = False
+
     Private Sub RealidadAumentadaView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PnlComponents.Controls.Add(meaningControl)
+        isValidViewMeaning = True
         SetStateButtons()
     End Sub
 
@@ -44,18 +50,22 @@
 
     Private Sub SetViewControl()
         If numberView = 1 Then
+            isValidViewMeaning = True
             PnlComponents.Controls.Clear()
             PnlComponents.Controls.Add(meaningControl)
             ClearAudio()
         ElseIf numberView = 2 Then
+            isValidViewApplications = True
             PnlComponents.Controls.Clear()
             PnlComponents.Controls.Add(applicationsControl)
             ClearAudio()
         ElseIf numberView = 3 Then
+            isValidViewWhoCreate = True
             PnlComponents.Controls.Clear()
             PnlComponents.Controls.Add(New WhoCreateControl())
             ClearAudio()
         ElseIf numberView = 4 Then
+            isValidViewCovid = True
             PnlComponents.Controls.Clear()
             PnlComponents.Controls.Add(New CovidInfluenceControl())
             ClearAudio()
@@ -71,6 +81,15 @@
             Me.Close()
             Me.Dispose()
             LoginView.Show()
+        End If
+    End Sub
+
+    Private Sub BtnExam_Click(sender As Object, e As EventArgs) Handles BtnExam.Click
+        If isValidViewApplications And isValidViewCovid And isValidViewMeaning And isValidViewWhoCreate Then
+            Me.Hide()
+            ExamView.Show()
+        Else
+            MessageBox.Show("Debe ver todos los temas antes de realizar el examen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 End Class
