@@ -36,3 +36,11 @@ C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.CovidInf
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.InitMenuView.resources
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.LoginView.resources
 C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.ExamView.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.Examen_Data_Mining.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.En_que_se_utiliza.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.Como_funciona___tipos_de_modelado.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.Que_es.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\bin\Debug\Interop.WMPLib.dll
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.AplicativoView.resources
+C:\Users\Usuario\source\repos\Fase4_Prototipo\obj\Debug\Fase4_Prototipo.OptionsMenuView.resources

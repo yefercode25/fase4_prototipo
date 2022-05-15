@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxInterop.WMPLib">
+      <HintPath>..\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>D:\Paquetes Visual Studio Forms\Bunifu IU\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
@@ -84,42 +87,70 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\StudentForm.Designer.vb">
-      <DependentUpon>StudentForm.vb</DependentUpon>
+    <Compile Include="AplicativoView.Designer.vb">
+      <DependentUpon>AplicativoView.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\StudentForm.vb">
+    <Compile Include="AplicativoView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Components\UserControls\ApplicationsControl.Designer.vb">
+    <Compile Include="BriyidProject\Como funciona - tipos de modelado.designer.vb">
+      <DependentUpon>Como funciona - tipos de modelado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BriyidProject\Como funciona - tipos de modelado.vb" />
+    <Compile Include="BriyidProject\En que se utiliza.designer.vb">
+      <DependentUpon>En que se utiliza.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BriyidProject\En que se utiliza.vb" />
+    <Compile Include="BriyidProject\Examen_Data Mining.designer.vb">
+      <DependentUpon>Examen_Data Mining.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BriyidProject\Examen_Data Mining.vb" />
+    <Compile Include="BriyidProject\OptionsMenuView.Designer.vb">
+      <DependentUpon>OptionsMenuView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BriyidProject\OptionsMenuView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BriyidProject\Que es.designer.vb">
+      <DependentUpon>Que es.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BriyidProject\Que es.vb" />
+    <Compile Include="YefersonProject\Components\StudentForm.Designer.vb">
+      <DependentUpon>StudentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="YefersonProject\Components\StudentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YefersonProject\Components\UserControls\ApplicationsControl.Designer.vb">
       <DependentUpon>ApplicationsControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UserControls\ApplicationsControl.vb">
+    <Compile Include="YefersonProject\Components\UserControls\ApplicationsControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UserControls\CovidInfluenceControl.Designer.vb">
+    <Compile Include="YefersonProject\Components\UserControls\CovidInfluenceControl.Designer.vb">
       <DependentUpon>CovidInfluenceControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UserControls\CovidInfluenceControl.vb">
+    <Compile Include="YefersonProject\Components\UserControls\CovidInfluenceControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UserControls\MeaningControl.Designer.vb">
+    <Compile Include="YefersonProject\Components\UserControls\MeaningControl.Designer.vb">
       <DependentUpon>MeaningControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UserControls\MeaningControl.vb">
+    <Compile Include="YefersonProject\Components\UserControls\MeaningControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Components\UserControls\WhoCreateControl.Designer.vb">
+    <Compile Include="YefersonProject\Components\UserControls\WhoCreateControl.Designer.vb">
       <DependentUpon>WhoCreateControl.vb</DependentUpon>
     </Compile>
-    <Compile Include="Components\UserControls\WhoCreateControl.vb">
+    <Compile Include="YefersonProject\Components\UserControls\WhoCreateControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Data\Config\Database.vb" />
-    <Compile Include="Data\Controllers\EstudianteController.vb" />
-    <Compile Include="ExamView.Designer.vb">
+    <Compile Include="YefersonProject\Data\Config\Database.vb" />
+    <Compile Include="YefersonProject\Data\Controllers\EstudianteController.vb" />
+    <Compile Include="YefersonProject\ExamView.Designer.vb">
       <DependentUpon>ExamView.vb</DependentUpon>
     </Compile>
-    <Compile Include="ExamView.vb">
+    <Compile Include="YefersonProject\ExamView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InitMenuView.Designer.vb">
@@ -128,26 +159,26 @@
     <Compile Include="InitMenuView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginView.Designer.vb">
+    <Compile Include="YefersonProject\LoginView.Designer.vb">
       <DependentUpon>LoginView.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginView.vb">
+    <Compile Include="YefersonProject\LoginView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RealidadAumentadaView.Designer.vb">
+    <Compile Include="YefersonProject\RealidadAumentadaView.Designer.vb">
       <DependentUpon>RealidadAumentadaView.vb</DependentUpon>
     </Compile>
-    <Compile Include="RealidadAumentadaView.vb">
+    <Compile Include="YefersonProject\RealidadAumentadaView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentAdminView.vb">
+    <Compile Include="YefersonProject\StudentAdminView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentAdminView.Designer.vb">
+    <Compile Include="YefersonProject\StudentAdminView.Designer.vb">
       <DependentUpon>StudentAdminView.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Data\Models\EstudianteModel.vb" />
+    <Compile Include="YefersonProject\Data\Models\EstudianteModel.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -166,34 +197,52 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Components\StudentForm.resx">
+    <EmbeddedResource Include="AplicativoView.resx">
+      <DependentUpon>AplicativoView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BriyidProject\Como funciona - tipos de modelado.resx">
+      <DependentUpon>Como funciona - tipos de modelado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BriyidProject\En que se utiliza.resx">
+      <DependentUpon>En que se utiliza.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BriyidProject\Examen_Data Mining.resx">
+      <DependentUpon>Examen_Data Mining.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BriyidProject\OptionsMenuView.resx">
+      <DependentUpon>OptionsMenuView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BriyidProject\Que es.resx">
+      <DependentUpon>Que es.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YefersonProject\Components\StudentForm.resx">
       <DependentUpon>StudentForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UserControls\ApplicationsControl.resx">
+    <EmbeddedResource Include="YefersonProject\Components\UserControls\ApplicationsControl.resx">
       <DependentUpon>ApplicationsControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UserControls\CovidInfluenceControl.resx">
+    <EmbeddedResource Include="YefersonProject\Components\UserControls\CovidInfluenceControl.resx">
       <DependentUpon>CovidInfluenceControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UserControls\MeaningControl.resx">
+    <EmbeddedResource Include="YefersonProject\Components\UserControls\MeaningControl.resx">
       <DependentUpon>MeaningControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Components\UserControls\WhoCreateControl.resx">
+    <EmbeddedResource Include="YefersonProject\Components\UserControls\WhoCreateControl.resx">
       <DependentUpon>WhoCreateControl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExamView.resx">
+    <EmbeddedResource Include="YefersonProject\ExamView.resx">
       <DependentUpon>ExamView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitMenuView.resx">
       <DependentUpon>InitMenuView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginView.resx">
+    <EmbeddedResource Include="YefersonProject\LoginView.resx">
       <DependentUpon>LoginView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RealidadAumentadaView.resx">
+    <EmbeddedResource Include="YefersonProject\RealidadAumentadaView.resx">
       <DependentUpon>RealidadAumentadaView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentAdminView.resx">
+    <EmbeddedResource Include="YefersonProject\StudentAdminView.resx">
       <DependentUpon>StudentAdminView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -216,7 +265,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Icons\" />
+    <Folder Include="YefersonProject\Icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
