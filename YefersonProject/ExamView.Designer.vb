@@ -26,6 +26,8 @@ Partial Class ExamView
         Dim Animation3 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ExamView))
         Me.TopPanelView = New System.Windows.Forms.Panel()
+        Me.BtnMinimize = New System.Windows.Forms.PictureBox()
+        Me.BtnClose = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FormRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.DragTopPanel = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
@@ -48,8 +50,8 @@ Partial Class ExamView
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LblTime = New System.Windows.Forms.Label()
         Me.Animate = New BunifuAnimatorNS.BunifuTransition(Me.components)
-        Me.BtnMinimize = New System.Windows.Forms.PictureBox()
-        Me.BtnClose = New System.Windows.Forms.PictureBox()
+        Me.BtnEndRevision = New Bunifu.Framework.UI.BunifuTileButton()
+        Me.BtnEndRevisonRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.TopPanelView.SuspendLayout()
         CType(Me.BtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,10 +65,35 @@ Partial Class ExamView
         Me.TopPanelView.Controls.Add(Me.Label1)
         Me.Animate.SetDecoration(Me.TopPanelView, BunifuAnimatorNS.DecorationType.None)
         Me.TopPanelView.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TopPanelView.ForeColor = System.Drawing.Color.Black
         Me.TopPanelView.Location = New System.Drawing.Point(0, 0)
         Me.TopPanelView.Name = "TopPanelView"
         Me.TopPanelView.Size = New System.Drawing.Size(1054, 50)
         Me.TopPanelView.TabIndex = 1
+        '
+        'BtnMinimize
+        '
+        Me.BtnMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Animate.SetDecoration(Me.BtnMinimize, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnMinimize.Image = CType(resources.GetObject("BtnMinimize.Image"), System.Drawing.Image)
+        Me.BtnMinimize.Location = New System.Drawing.Point(979, 9)
+        Me.BtnMinimize.Name = "BtnMinimize"
+        Me.BtnMinimize.Size = New System.Drawing.Size(31, 31)
+        Me.BtnMinimize.TabIndex = 4
+        Me.BtnMinimize.TabStop = False
+        '
+        'BtnClose
+        '
+        Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Animate.SetDecoration(Me.BtnClose, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(1012, 9)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(31, 31)
+        Me.BtnClose.TabIndex = 3
+        Me.BtnClose.TabStop = False
         '
         'Label1
         '
@@ -96,7 +123,7 @@ Partial Class ExamView
         '
         Me.Animate.SetDecoration(Me.LblTitle, BunifuAnimatorNS.DecorationType.None)
         Me.LblTitle.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTitle.ForeColor = System.Drawing.Color.White
+        Me.LblTitle.ForeColor = System.Drawing.Color.Black
         Me.LblTitle.Location = New System.Drawing.Point(22, 76)
         Me.LblTitle.Name = "LblTitle"
         Me.LblTitle.Size = New System.Drawing.Size(1009, 24)
@@ -182,7 +209,7 @@ Partial Class ExamView
         '
         Me.RadOptionA.AutoSize = True
         Me.Animate.SetDecoration(Me.RadOptionA, BunifuAnimatorNS.DecorationType.None)
-        Me.RadOptionA.ForeColor = System.Drawing.Color.White
+        Me.RadOptionA.ForeColor = System.Drawing.Color.Black
         Me.RadOptionA.Location = New System.Drawing.Point(31, 111)
         Me.RadOptionA.Name = "RadOptionA"
         Me.RadOptionA.Size = New System.Drawing.Size(438, 25)
@@ -195,7 +222,7 @@ Partial Class ExamView
         '
         Me.RadOptionB.AutoSize = True
         Me.Animate.SetDecoration(Me.RadOptionB, BunifuAnimatorNS.DecorationType.None)
-        Me.RadOptionB.ForeColor = System.Drawing.Color.White
+        Me.RadOptionB.ForeColor = System.Drawing.Color.Black
         Me.RadOptionB.Location = New System.Drawing.Point(31, 143)
         Me.RadOptionB.Name = "RadOptionB"
         Me.RadOptionB.Size = New System.Drawing.Size(447, 25)
@@ -208,7 +235,7 @@ Partial Class ExamView
         '
         Me.RadOptionC.AutoSize = True
         Me.Animate.SetDecoration(Me.RadOptionC, BunifuAnimatorNS.DecorationType.None)
-        Me.RadOptionC.ForeColor = System.Drawing.Color.White
+        Me.RadOptionC.ForeColor = System.Drawing.Color.Black
         Me.RadOptionC.Location = New System.Drawing.Point(31, 174)
         Me.RadOptionC.Name = "RadOptionC"
         Me.RadOptionC.Size = New System.Drawing.Size(425, 25)
@@ -221,7 +248,7 @@ Partial Class ExamView
         '
         Me.RadOptionD.AutoSize = True
         Me.Animate.SetDecoration(Me.RadOptionD, BunifuAnimatorNS.DecorationType.None)
-        Me.RadOptionD.ForeColor = System.Drawing.Color.White
+        Me.RadOptionD.ForeColor = System.Drawing.Color.Black
         Me.RadOptionD.Location = New System.Drawing.Point(31, 205)
         Me.RadOptionD.Name = "RadOptionD"
         Me.RadOptionD.Size = New System.Drawing.Size(432, 25)
@@ -235,7 +262,7 @@ Partial Class ExamView
         Me.Label13.AutoSize = True
         Me.Animate.SetDecoration(Me.Label13, BunifuAnimatorNS.DecorationType.None)
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.ForeColor = System.Drawing.Color.Black
         Me.Label13.Location = New System.Drawing.Point(26, 322)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(133, 28)
@@ -291,7 +318,7 @@ Partial Class ExamView
         Me.Label3.AutoSize = True
         Me.Animate.SetDecoration(Me.Label3, BunifuAnimatorNS.DecorationType.None)
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(482, 326)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(167, 23)
@@ -331,36 +358,39 @@ Partial Class ExamView
         Animation3.TransparencyCoeff = 0!
         Me.Animate.DefaultAnimation = Animation3
         '
-        'BtnMinimize
+        'BtnEndRevision
         '
-        Me.BtnMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnMinimize.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Animate.SetDecoration(Me.BtnMinimize, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnMinimize.Image = CType(resources.GetObject("BtnMinimize.Image"), System.Drawing.Image)
-        Me.BtnMinimize.Location = New System.Drawing.Point(979, 9)
-        Me.BtnMinimize.Name = "BtnMinimize"
-        Me.BtnMinimize.Size = New System.Drawing.Size(31, 31)
-        Me.BtnMinimize.TabIndex = 4
-        Me.BtnMinimize.TabStop = False
+        Me.BtnEndRevision.BackColor = System.Drawing.Color.Crimson
+        Me.BtnEndRevision.color = System.Drawing.Color.Crimson
+        Me.BtnEndRevision.colorActive = System.Drawing.Color.Maroon
+        Me.BtnEndRevision.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Animate.SetDecoration(Me.BtnEndRevision, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnEndRevision.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEndRevision.ForeColor = System.Drawing.Color.White
+        Me.BtnEndRevision.Image = Nothing
+        Me.BtnEndRevision.ImagePosition = 13
+        Me.BtnEndRevision.ImageZoom = 50
+        Me.BtnEndRevision.LabelPosition = 26
+        Me.BtnEndRevision.LabelText = "Finalizar Revision"
+        Me.BtnEndRevision.Location = New System.Drawing.Point(706, 261)
+        Me.BtnEndRevision.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEndRevision.Name = "BtnEndRevision"
+        Me.BtnEndRevision.Size = New System.Drawing.Size(152, 35)
+        Me.BtnEndRevision.TabIndex = 51
+        Me.BtnEndRevision.Visible = False
         '
-        'BtnClose
+        'BtnEndRevisonRadius
         '
-        Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Animate.SetDecoration(Me.BtnClose, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(1012, 9)
-        Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(31, 31)
-        Me.BtnClose.TabIndex = 3
-        Me.BtnClose.TabStop = False
+        Me.BtnEndRevisonRadius.ElipseRadius = 5
+        Me.BtnEndRevisonRadius.TargetControl = Me.BtnEndRevision
         '
         'ExamView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1054, 379)
+        Me.Controls.Add(Me.BtnEndRevision)
         Me.Controls.Add(Me.LblTime)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnResetForm)
@@ -416,4 +446,6 @@ Partial Class ExamView
     Friend WithEvents Animate As BunifuAnimatorNS.BunifuTransition
     Friend WithEvents BtnMinimize As PictureBox
     Friend WithEvents BtnClose As PictureBox
+    Friend WithEvents BtnEndRevision As Bunifu.Framework.UI.BunifuTileButton
+    Friend WithEvents BtnEndRevisonRadius As Bunifu.Framework.UI.BunifuElipse
 End Class

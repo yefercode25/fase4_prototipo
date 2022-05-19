@@ -1,10 +1,10 @@
 ﻿Public Class ExamView
     'Variables de apoyo para el manejo del estado del formulario
-    Dim TimeForm As Integer = 180
-    Dim questionNumber As Integer = 1
-    Dim correctAnswersNumber As Integer = 0
-    Dim revisionMode As Boolean = False
-    Dim answersUser As SortedDictionary(Of Integer, String) = New SortedDictionary(Of Integer, String)
+    Private TimeForm As Integer = 180
+    Private questionNumber As Integer = 1
+    Public correctAnswersNumber As Integer = 0
+    Private revisionMode As Boolean = False
+    Private answersUser As SortedDictionary(Of Integer, String) = New SortedDictionary(Of Integer, String)
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs)
         Me.Close()
@@ -219,6 +219,7 @@
         LblResult.Text = correctAnswersNumber.ToString() + "/5 Preguntas correctas"
         LblResult.Visible = True
         BtnResetForm.Visible = True
+        BtnEndRevision.Visible = True
     End Function
 
     Private Function SetCorrectResponse()
@@ -284,29 +285,32 @@
     End Function
 
     Private Function ResetForeColor()
-        RadOptionA.ForeColor = Color.White
-        RadOptionB.ForeColor = Color.White
-        RadOptionC.ForeColor = Color.White
-        RadOptionD.ForeColor = Color.White
+        RadOptionA.ForeColor = Color.Black
+        RadOptionB.ForeColor = Color.Black
+        RadOptionC.ForeColor = Color.Black
+        RadOptionD.ForeColor = Color.Black
     End Function
 
     Private Sub BtnResetForm_Click(sender As Object, e As EventArgs) Handles BtnResetForm.Click
-        revisionMode = False
+        If MessageBox.Show("¿Está seguro que desea reiniciar el cuestionario? Esta acción eliminará la puntuación anterior definitivamente.", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            revisionMode = False
 
-        answersUser.Clear()
-        correctAnswersNumber = 0
+            answersUser.Clear()
+            correctAnswersNumber = 0
 
-        questionNumber = 1
-        TimeForm = 180
-        SetQuestionInDisplay(GetTitleQuestion(questionNumber), GetOptionsQuestion(questionNumber))
+            questionNumber = 1
+            TimeForm = 180
+            SetQuestionInDisplay(GetTitleQuestion(questionNumber), GetOptionsQuestion(questionNumber))
 
-        Label13.Visible = False
-        LblResult.Visible = False
-        BtnResetForm.Visible = False
-        BtnFinish.Enabled = True
+            Label13.Visible = False
+            LblResult.Visible = False
+            BtnResetForm.Visible = False
+            BtnEndRevision.Visible = False
+            BtnFinish.Enabled = True
 
-        ResetForeColor()
-        ControlTime.Start()
+            ResetForeColor()
+            ControlTime.Start()
+        End If
     End Sub
 
     Private Sub ControlTime_Tick(sender As Object, e As EventArgs) Handles ControlTime.Tick
@@ -314,12 +318,10 @@
         LblTime.Text = TimeForm.ToString() + " segundos"
         If TimeForm = 0 Then
             ControlTime.Stop()
-            MessageBox.Show("El tiempo ha finalizado, el formulario se evaluará con las preguntas que hayas respondido hasta el momento.", "Tiempo Finalizado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            BtnFinish.Enabled = False
-            revisionMode = True
-            questionNumber = 1
-            SetQuestionInDisplay(GetTitleQuestion(questionNumber), GetOptionsQuestion(questionNumber))
-            SetCorrectAnsuers()
+            MessageBox.Show("El tiempo ha finalizado, debido a esto se le evaluará con 0 puntos.", "Tiempo Finalizado", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            Me.Hide()
+            Me.Dispose()
         End If
     End Sub
 
@@ -333,5 +335,11 @@
 
     Private Sub BtnMinimize_Click(sender As Object, e As EventArgs) Handles BtnMinimize.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BtnEndRevision_Click(sender As Object, e As EventArgs) Handles BtnEndRevision.Click
+        Me.Hide()
+        Me.Dispose()
+        RealidadAumentadaView.Show()
     End Sub
 End Class

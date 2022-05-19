@@ -4,10 +4,14 @@
     Dim meaningControl As New CreateControl()
     Dim applicationsControl As New ApplicationsControl()
 
+    Dim examView As New ExamView()
+
     Dim isValidViewMeaning As Boolean = False
     Dim isValidViewApplications As Boolean = False
     Dim isValidViewWhoCreate As Boolean = False
     Dim isValidViewCovid As Boolean = False
+
+    Public correctPointsExam = 0
 
     Private Sub RealidadAumentadaView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PnlComponents.Controls.Add(meaningControl)
@@ -88,10 +92,47 @@
 
     Private Sub BtnExam_Click(sender As Object, e As EventArgs) Handles BtnExam.Click
         If isValidViewApplications And isValidViewCovid And isValidViewMeaning And isValidViewWhoCreate Then
-            Me.Hide()
-            ExamView.Show()
+            If MessageBox.Show("¿Está seguro que desea iniciar el examen? Para realizarlo tiene un máximo de 3 minutos y empezará a contar el tiempo una vez acepte iniciar.", "Examen", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                examView = New ExamView()
+
+                If correctPointsExam >= 3 Then
+                    Dim repeatExam = MessageBox.Show("¿Desea repetir el examen?, su puntuación se perderá definitivamente", "Repetir examen", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    If repeatExam = DialogResult.Yes Then
+                        examView.ShowDialog()
+                    End If
+                Else
+                    examView.ShowDialog()
+                End If
+
+                correctPointsExam = examView.correctAnswersNumber
+
+                ValidateStatusExam()
+            End If
         Else
             MessageBox.Show("Debe ver todos los temas antes de realizar el examen", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub ValidateStatusExam()
+        If correctPointsExam >= 3 Then
+            LblStatusTheme.Text = "Aprobado"
+            MessageBox.Show("Felicidades, ha aprobado el tema", "Aprobado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            MessageBox.Show("A continuación se redireccionará a la pantalla de temas, ya puede seleccionar el siguiente tema", "Redirección", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Me.Close()
+            AplicativoView.Show()
+        Else
+            LblStatusTheme.Text = "Reprobado"
+            MessageBox.Show($"Su puntuación es de {correctPointsExam}/5 puntos, por lo que no puede continuar con el siguiente tema y debe revisar todo el tema nuevamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            numberView = 1
+            SetStateButtons()
+            SetViewControl()
+
+            isValidViewApplications = False
+            isValidViewCovid = False
+            isValidViewWhoCreate = False
         End If
     End Sub
 End Class

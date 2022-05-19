@@ -40,6 +40,8 @@ Partial Class RealidadAumentadaView
         Me.BtnExamRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BtnBackRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.PanelRadius = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LblStatusTheme = New System.Windows.Forms.Label()
         Me.PnlTop.SuspendLayout()
         CType(Me.BtnMinimize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,12 +192,36 @@ Partial Class RealidadAumentadaView
         Me.PanelRadius.ElipseRadius = 5
         Me.PanelRadius.TargetControl = Me.PnlComponents
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(27, 53)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(117, 16)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Estado del tema:"
+        '
+        'LblStatusTheme
+        '
+        Me.LblStatusTheme.AutoSize = True
+        Me.LblStatusTheme.Font = New System.Drawing.Font("Century Gothic", 10.0!)
+        Me.LblStatusTheme.ForeColor = System.Drawing.Color.White
+        Me.LblStatusTheme.Location = New System.Drawing.Point(145, 51)
+        Me.LblStatusTheme.Name = "LblStatusTheme"
+        Me.LblStatusTheme.Size = New System.Drawing.Size(80, 19)
+        Me.LblStatusTheme.TabIndex = 10
+        Me.LblStatusTheme.Text = "Pendiente"
+        '
         'RealidadAumentadaView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(896, 549)
+        Me.Controls.Add(Me.LblStatusTheme)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BtnBack)
         Me.Controls.Add(Me.BtnExam)
         Me.Controls.Add(Me.BtnNext)
@@ -213,6 +239,7 @@ Partial Class RealidadAumentadaView
         CType(Me.BtnMinimize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -232,4 +259,6 @@ Partial Class RealidadAumentadaView
     Friend WithEvents BtnExamRadius As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents BtnBackRadius As Bunifu.Framework.UI.BunifuElipse
     Friend WithEvents PanelRadius As Bunifu.Framework.UI.BunifuElipse
+    Friend WithEvents LblStatusTheme As Label
+    Friend WithEvents Label2 As Label
 End Class
