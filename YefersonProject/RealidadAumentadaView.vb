@@ -12,6 +12,7 @@
     Dim isValidViewCovid As Boolean = False
 
     Public correctPointsExam = 0
+    Public continueNextTheme = False
 
     Private Sub RealidadAumentadaView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PnlComponents.Controls.Add(meaningControl)
@@ -20,9 +21,7 @@
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Me.Hide()
-        Me.Dispose()
-        AplicativoView.Show()
+        Me.Close()
     End Sub
 
     Private Sub BtnMinimize_Click(sender As Object, e As EventArgs) Handles BtnMinimize.Click
@@ -85,7 +84,6 @@
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
         If MessageBox.Show("¿Está seguro que desea regresar?", "Regresar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Me.Close()
-            Me.Dispose()
             AplicativoView.Show()
         End If
     End Sub
@@ -120,8 +118,9 @@
 
             MessageBox.Show("A continuación se redireccionará a la pantalla de temas, ya puede seleccionar el siguiente tema", "Redirección", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            continueNextTheme = True
+
             Me.Close()
-            AplicativoView.Show()
         Else
             LblStatusTheme.Text = "Reprobado"
             MessageBox.Show($"Su puntuación es de {correctPointsExam}/5 puntos, por lo que no puede continuar con el siguiente tema y debe revisar todo el tema nuevamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)
