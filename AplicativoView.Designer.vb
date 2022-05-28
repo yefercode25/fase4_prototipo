@@ -116,7 +116,7 @@ Partial Class AplicativoView
         Me.BtnRealidad.ImageZoom = 50
         Me.BtnRealidad.LabelPosition = 29
         Me.BtnRealidad.LabelText = "Realidad aumentada"
-        Me.BtnRealidad.Location = New System.Drawing.Point(223, 98)
+        Me.BtnRealidad.Location = New System.Drawing.Point(221, 98)
         Me.BtnRealidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnRealidad.Name = "BtnRealidad"
         Me.BtnRealidad.Size = New System.Drawing.Size(171, 127)

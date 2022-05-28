@@ -329,7 +329,6 @@
         If MessageBox.Show("¿Está seguro que desea salir del cuestionario? Todo el avance se perderá", "confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Me.Hide()
             Me.Dispose()
-            RealidadAumentadaView.Show()
         End If
     End Sub
 
@@ -338,8 +337,7 @@
     End Sub
 
     Private Sub BtnEndRevision_Click(sender As Object, e As EventArgs) Handles BtnEndRevision.Click
-        Me.Hide()
+        Me.Close()
         Me.Dispose()
-        RealidadAumentadaView.Show()
     End Sub
 End Class

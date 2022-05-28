@@ -84,7 +84,6 @@
     Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
         If MessageBox.Show("¿Está seguro que desea regresar?", "Regresar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Me.Close()
-            AplicativoView.Show()
         End If
     End Sub
 
@@ -120,7 +119,7 @@
 
             continueNextTheme = True
 
-            Me.Close()
+            Close()
         Else
             LblStatusTheme.Text = "Reprobado"
             MessageBox.Show($"Su puntuación es de {correctPointsExam}/5 puntos, por lo que no puede continuar con el siguiente tema y debe revisar todo el tema nuevamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information)

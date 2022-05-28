@@ -1,23 +1,41 @@
 ﻿Public Class AplicativoView
+    'Manejo de estado del tema de minería de datos
+    Dim mineriaDeDatosForm As New OptionsMenuView()
+    Dim mineriaDeDatosIsValid As Boolean = False
+
+    'Manejo de estado del tema de realidad aumentada
     Dim realidadAumentadaForm As New RealidadAumentadaView()
     Dim realidadAumentadaIsValid As Boolean = False
 
     Private Sub BtnMineria_Click(sender As Object, e As EventArgs) Handles BtnMineria.Click
-        Me.Hide()
-        OptionsMenuView.Show()
+        If mineriaDeDatosIsValid Then
+            If MessageBox.Show("Ya completaste este tema, ¿deseas verlo de nuevo?", "Repetir Tema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                mineriaDeDatosForm.ShowDialog()
+
+                mineriaDeDatosIsValid = mineriaDeDatosForm.continueNextTheme
+            End If
+        Else
+            mineriaDeDatosForm.ShowDialog()
+
+            mineriaDeDatosIsValid = mineriaDeDatosForm.continueNextTheme
+        End If
     End Sub
 
     Private Sub BtnRealidad_Click(sender As Object, e As EventArgs) Handles BtnRealidad.Click
-        If realidadAumentadaIsValid Then
-            If MessageBox.Show("Ya completaste este tema, ¿deseas verlo de nuevo?", "Repetir Tema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                RealidadAumentadaView.ShowDialog()
+        If mineriaDeDatosIsValid Then
+            If realidadAumentadaIsValid Then
+                If MessageBox.Show("Ya completaste este tema, ¿deseas verlo de nuevo?", "Repetir Tema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    realidadAumentadaForm.ShowDialog()
 
-                realidadAumentadaIsValid = RealidadAumentadaView.continueNextTheme
+                    realidadAumentadaIsValid = realidadAumentadaForm.continueNextTheme
+                End If
+            Else
+                realidadAumentadaForm.ShowDialog()
+
+                realidadAumentadaIsValid = realidadAumentadaForm.continueNextTheme
             End If
         Else
-            RealidadAumentadaView.ShowDialog()
-
-            realidadAumentadaIsValid = RealidadAumentadaView.continueNextTheme
+            MessageBox.Show("No has completado el tema anterior, por favor revisa para acceder a este recurso.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

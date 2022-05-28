@@ -1,6 +1,6 @@
 ﻿Public Class Examen_Data_Mining
 
-    Dim correct As Integer
+    Public correct As Integer
     Dim incorrect As Integer
     Dim minutos As Integer
     Dim segundos As Integer
